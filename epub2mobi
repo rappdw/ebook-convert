@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -f "$1" ]; then
+  DIR=$(dirname "${1}")
+  if [ "$DIR" == "." ]; then
+    DIR=$(pwd)
+  fi
+  FN=${1##*/}
+  BOOK_NAME=${FN%.*}; docker run --rm -it -v "$DIR:/target" rappdw/ebook-convert "$BOOK_NAME.epub" "$BOOK_NAME.mobi"
+else
+  echo "$1 does not exist. Please specify a valid file"
+fi
