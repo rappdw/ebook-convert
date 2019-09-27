@@ -1,6 +1,6 @@
 FROM ubuntu:19.10
 
-# creates a docker image that will epub2mobi an ebook from one format to another (guessed by file extensions of input)
+# creates a docker image that will convert an ebook from one format to another (guessed by file extensions of input)
 # see: https://manual.calibre-ebook.com/generated/en/ebook-convert.html
 
 RUN mkdir /target
